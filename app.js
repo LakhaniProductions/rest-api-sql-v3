@@ -13,14 +13,6 @@ const app = express();
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
 
-(async() => {
-  try{
-    await sequelize.authenticate();
-    console.log('Connected');
-  }catch(error){
-    console.error('Error Connecting',error);
-  }
-})()
 
 // setup a friendly greeting for the root route
 app.get('/', (req, res) => {
